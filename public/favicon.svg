@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#0B0B0C"/>
+  <!-- "T." — the T is the real Bricolage Grotesque 800 glyph outline, baked as a static
+       path so the mark is exact everywhere without depending on the font being loaded
+       (favicons don't inherit the page's @font-face). The dot sits where the period
+       actually falls after T's real advance width plus the wordmark's -0.035em tracking. -->
+  <path d="M47.23 93.02V33.02H61.95V93.02ZM29.77 45.2V33.02H79.59V45.2Z" fill="#F5F2EA"/>
+  <circle cx="89.23" cy="85.98" r="9" fill="#D6FF3E"/>
+</svg>

@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+
+/* ────────────────────────────────────────────────────────────
+   Fonts are bundled from node_modules, not fetched from a CDN:
+   the app has to render correctly offline and inside a Tauri
+   window. Only the Latin weight-axis files are referenced —
+   pulling each family's full index.css would ship Cyrillic,
+   Greek, and Vietnamese subsets that this ledger never renders.
+   ──────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Bricolage Grotesque Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2')
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2')
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2')
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+/* ────────────────────────────────────────────────────────────
+   TALLY — "Volt Ledger" design tokens.
+   Colours are authored in hex (not oklch) so they survive
+   canvas rasterisation and PDF colour conversion untouched.
+   ──────────────────────────────────────────────────────────── */
+@theme {
+  /* ink — the structural black of the rail */
+  --color-ink: #0b0b0c;
+  --color-ink-raised: #161618;
+  --color-ink-soft: #1e1e22;
+  --color-ink-line: #26262a;
+  --color-ink-edge: #34343a;
+  --color-ink-muted: #8c8880;
+  --color-ink-faint: #5e5a54;
+
+  /* paper — the warm statement surface */
+  --color-paper: #f5f2ea;
+  --color-paper-raised: #ede8dc;
+  --color-paper-line: #e2dcce;
+  --color-paper-muted: #8a857b;
+
+  /* signals */
+  --color-volt: #d6ff3e;
+  --color-volt-deep: #b8e01f;
+  --color-flare: #ff4a28;
+  --color-flare-soft: #ffe1d9;
+  --color-moss: #1b7a4b;
+
+  /* type */
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* display scale — the 76 → 10 drop is the whole hierarchy */
+  --text-hero: 4.75rem;
+  --text-hero--line-height: 0.88;
+  --text-hero--letter-spacing: -0.045em;
+  --text-mark: 2rem;
+  --text-mark--line-height: 1;
+  --text-mark--letter-spacing: -0.035em;
+  --text-micro: 0.625rem;
+  --text-micro--line-height: 1.4;
+  --text-micro--letter-spacing: 0.16em;
+
+  --radius-field: 0.6875rem;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink font-sans text-ink antialiased;
+    font-size: 15px;
+  }
+
+  ::selection {
+    @apply bg-volt text-ink;
+  }
+
+  /* Native controls inherit the ledger's type, not the browser's */
+  input,
+  select,
+  button,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Date pickers sitting on ink need an inverted indicator to be visible */
+  .on-ink input[type='date']::-webkit-calendar-picker-indicator {
+    filter: invert(1) opacity(0.55);
+    cursor: pointer;
+  }
+  .on-ink input[type='date']:hover::-webkit-calendar-picker-indicator {
+    filter: invert(1) opacity(1);
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.45;
+  }
+  input[type='date']:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+  }
+}
+
+/* Declared as @utility, not @layer components, so they compose with variants
+   (md:, print:) the same way built-in utilities do. */
+
+/* The micro-label voice: 10px, wide-tracked, uppercase */
+@utility lbl {
+  font-size: var(--text-micro);
+  line-height: var(--text-micro--line-height);
+  letter-spacing: var(--text-micro--letter-spacing);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* THE SIGNATURE: a perforated receipt edge between rail and statement.
+   background-image (not the `background` shorthand) so the paper colour
+   underneath survives — the notches read as punched out of the sheet. */
+@utility spine {
+  background-image: radial-gradient(circle at 0 10px, var(--color-ink) 5.5px, transparent 6px);
+  background-size: 16px 20px;
+  background-repeat: repeat-y;
+}
+
+@utility spine-h {
+  background-image: radial-gradient(circle at 10px 100%, var(--color-ink) 5.5px, transparent 6px);
+  background-size: 20px 16px;
+  background-repeat: repeat-x;
+}
+
+@utility paper-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d3cdbf transparent;
+}
+
+@utility ink-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #2e2e33 transparent;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
