@@ -13,7 +13,20 @@ native desktop app or a browser tab, and keeps every entry local to your device.
 
 Runs entirely client side, so the hosted version behaves exactly like the desktop build: nothing
 you type is sent anywhere, it just lives in that browser's local storage. Prefer a real desktop
-window with its own icon and title bar? See [Getting started](#getting-started) below.
+window with its own icon and title bar? Keep reading.
+
+## Download
+
+**[Download the latest Windows installer →](https://github.com/UMA1R-01/Tally-Budget/releases/latest)**
+
+Grab `Tally_x.y.z_x64-setup.exe` from the release assets and run it. It installs to a normal Program
+Files location with a Start Menu shortcut and an uninstaller. An MSI installer is attached to the
+same release if you need it instead.
+
+The installer is unsigned, so Windows SmartScreen will warn on first run. Choose **More info** then
+**Run anyway**. It relies on the WebView2 runtime, which already ships with Windows 10 and 11.
+
+Prefer to build it yourself? See [Getting started](#getting-started) below.
 
 ![Tally running as a desktop app, showing the entry rail and the live statement](docs/hero.png)
 
