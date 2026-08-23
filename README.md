@@ -9,6 +9,12 @@ native desktop app or a browser tab, and keeps every entry local to your device.
 
 [![Leave a tip](https://img.shields.io/badge/☕-Leave_a_tip-ff69b4?style=for-the-badge)](#-leave-a-tip)
 
+**[Try it in your browser →](https://tally-budget.vercel.app/)**
+
+Runs entirely client side, so the hosted version behaves exactly like the desktop build: nothing
+you type is sent anywhere, it just lives in that browser's local storage. Prefer a real desktop
+window with its own icon and title bar? See [Getting started](#getting-started) below.
+
 ![Tally running as a desktop app, showing the entry rail and the live statement](docs/hero.png)
 
 ## What it does
@@ -76,8 +82,8 @@ for your platform. On Windows that means:
 ### Install
 
 ```bash
-git clone https://github.com/UMA1R-01/tally.git
-cd tally
+git clone https://github.com/UMA1R-01/Tally-Budget.git
+cd Tally-Budget
 npm install
 ```
 
