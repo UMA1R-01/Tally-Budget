@@ -1,10 +1,13 @@
-# Tally
+<div align="center">
+  <img src="public/favicon.svg" width="96" alt="Tally icon">
 
-Tally is a private household ledger. Add income and expenses on one side, and read a live running
-statement on the other. Everything stays on your machine: there is no account, no server, and no
-network calls at all.
+  # Tally
 
-[![Leave a tip](https://img.shields.io/badge/☕-Leave_a_tip-ff69b4?style=for-the-badge)](#-leave-a-tip)
+  A simple, private way to track household income and expenses. Tally runs entirely offline, as a
+  native desktop app or a browser tab, and keeps every entry local to your device.
+
+  [![Leave a tip](https://img.shields.io/badge/☕-Leave_a_tip-ff69b4?style=for-the-badge)](#-leave-a-tip)
+</div>
 
 ## What it does
 
@@ -107,10 +110,6 @@ src-tauri/
   icons/            app icon, generated for every platform size
 ```
 
-## License
-
-[MIT](LICENSE) (c) Umair Aamir
-
 ## ☕ Leave a tip
 
 💛 If you like this app, a tip is always welcome!
@@ -144,3 +143,7 @@ G57VrGCbAFWSe2vPfx2ZrUUxzJeiARncKUkYMxw3wKVa
 ```
 
 </div>
+
+## License
+
+[MIT](LICENSE) © Umair Aamir
