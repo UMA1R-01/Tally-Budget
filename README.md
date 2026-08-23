@@ -2,12 +2,12 @@
   <img src="public/favicon.svg" width="96" alt="Tally icon">
 
   # Tally
-
-  A simple, private way to track household income and expenses. Tally runs entirely offline, as a
-  native desktop app or a browser tab, and keeps every entry local to your device.
-
-  [![Leave a tip](https://img.shields.io/badge/☕-Leave_a_tip-ff69b4?style=for-the-badge)](#-leave-a-tip)
 </div>
+
+A simple, private way to track household income and expenses. Tally runs entirely offline, as a
+native desktop app or a browser tab, and keeps every entry local to your device.
+
+[![Leave a tip](https://img.shields.io/badge/☕-Leave_a_tip-ff69b4?style=for-the-badge)](#-leave-a-tip)
 
 ![Tally running as a desktop app, showing the entry rail and the live statement](docs/hero.png)
 
