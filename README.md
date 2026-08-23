@@ -1,8 +1,8 @@
 <div align="center">
   <img src="public/favicon.svg" width="96" alt="Tally icon">
-</div>
 
-## &nbsp;
+  # Tally Budget
+</div>
 
 A simple, private way to track household income and expenses. Tally runs entirely offline, as a
 native desktop app or a browser tab, and keeps every entry local to your device.
