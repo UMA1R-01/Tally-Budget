@@ -1,7 +1,5 @@
 <div align="center">
   <img src="public/favicon.svg" width="96" alt="Tally icon">
-
-  # Tally
 </div>
 
 A simple, private way to track household income and expenses. Tally runs entirely offline, as a
