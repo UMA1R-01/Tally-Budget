@@ -9,6 +9,8 @@
   [![Leave a tip](https://img.shields.io/badge/☕-Leave_a_tip-ff69b4?style=for-the-badge)](#-leave-a-tip)
 </div>
 
+![Tally running as a desktop app, showing the entry rail and the live statement](docs/hero.png)
+
 ## What it does
 
 - Add income and expense entries with a description, amount, type, and date.
@@ -21,6 +23,31 @@
   so the text stays sharp and selectable.
 - Back up the ledger to a JSON file and restore it later, on this machine or another one.
 - Runs as a native Windows desktop app, built with Tauri, or in any modern browser.
+
+### One running statement, grouped by day
+
+Entries are never buried in a table you have to filter. They run in date order, grouped under the day
+they happened on, with that day's net shown on the right of every divider.
+
+![The statement scrolled to the middle of a month, showing day groups and per day totals](docs/statement.png)
+
+### Edit in place, with a real date picker
+
+Every row is the editor. Type, description, amount, and date all commit as you change them, and there
+is no save button to hunt for. The date field opens a calendar built to match the rest of the app
+rather than the browser default.
+
+![The entry form with the custom calendar popover open on August 2026](docs/date-picker.png)
+
+### Export a real PDF, not a screenshot
+
+The statement is drawn into the PDF with vector text and shapes, so it stays sharp at any zoom and
+the text can be selected and searched. Long descriptions wrap instead of being cut off, and no entry
+is ever split across a page break.
+
+<p align="center">
+  <img src="docs/pdf-export.png" width="620" alt="The exported PDF statement, showing the masthead, totals, and day grouped entries">
+</p>
 
 ## Tech stack
 

@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils'
 import { formatAmount, parseAmount } from '@/lib/money'
 
 export const ROW_GRID =
-  'grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 md:grid-cols-[104px_1fr_150px_124px_34px] md:gap-3.5'
+  'grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 md:grid-cols-[118px_1fr_150px_124px_34px] md:gap-3.5'
 
 interface LedgerRowProps {
   transaction: Transaction
@@ -56,7 +56,7 @@ export function LedgerRow({ transaction, onUpdate, onDelete }: LedgerRowProps) {
       )}
     >
       {/* Type — a real select, with a chevron, so it reads as editable */}
-      <div className="order-2 w-[104px] md:order-none md:w-auto">
+      <div className="order-2 w-[118px] md:order-none md:w-auto">
         <Select
           value={transaction.type}
           onValueChange={(value) => onUpdate(transaction.id, { type: value as TransactionType })}
